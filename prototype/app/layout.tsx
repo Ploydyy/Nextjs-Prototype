@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+
 import Nav from "./(components)/Nav";
 import SIdeBar from "./(components)/SIdeBar";
+
+import { Providers } from "./GlobalRedux/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +26,7 @@ export default function RootLayout({
           <Nav />
           <div className="flex h-screen overflow-hidden bg-page">
             <SIdeBar />
-            {children}
+            <Providers>{children}</Providers>
           </div>
         </div>
       </body>
